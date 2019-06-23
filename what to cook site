@@ -1,0 +1,102 @@
+  
+<html>
+<head>
+<title>What To Cook</title>
+    <link href="style.home.css" rel="stylesheet" type="text/css">
+</head>
+    <body>
+        <header>
+        <div class="row">
+            <ul class="main-nav">
+                <li class="2" >Home</li>
+                <li><a class="home2" href="login.html">Login</a></li>
+                <li>Recipes</li>
+                <li ><a class="home2" href="contacts.html">Contact</a></li>
+                <li><a class="home2" href="about.html">About</a></li>
+            </ul>
+            </div>
+        </header>
+        
+        <div class="slide-container">
+        <div class="slider_container">
+            <img id="numone" class='imgs'  src="background.jpg" style="width: 400px" height="200px">
+            <img src="Food.jpg"style="width: 400px" height="200px">
+            <img src="images%20(1).jpg"style="width: 400px" height="200px">
+            <img src="ing1.jpg" id="numend" style="width: 400px" height="200px">
+            <!---<video src="Pexels%20Videos%202055060.mp4" autoplay controls></video>--->
+            
+            </div>
+        
+        </div>
+        <button type="submit" class="prev">Perv</button>
+            <button type="submit" class="next">Next</button>
+            
+        
+        <h1 class="intro"><a class="num1" href="file:///C:/Users/seko/Desktop/web%20desin/index.action.html">Let's CooK!!</a></h1>
+        <img class="logo" src="logo.jpg" alt="logo" width="200px">
+    
+        <h1 class="txt"><strong>From breaking scientific studies, surveys, and special promotional events, to the latest and greatest creations in fast food, drinks, and snacks, we’ve skimmed off the cream of the crop and are serving it up in fun and informative bite-sized pieces that are still enough to chew on.</strong></h1>
+        <!--<img class="homepic2" src="ing1.jpg" alt:"ingrediants"></img>--->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+        var interval;
+            function startSlider(){
+              interval= setInterval(function(){
+                    console.log("loser")
+                    var current = $(".imgs");
+                    var nxt = current.next();
+                    var reset =$("#numone");
+
+                    if(nxt.length){
+                        current.removeClass("imgs").css("z-index",-10);
+                        nxt.addClass("imgs").css("z-index",10);
+                   }
+                    if(nxt.length == 0){
+                        current.removeClass("imgs").css("z-index",-10);
+                        reset.addClass("imgs").css("z-indez",10);
+                        console.log("loser")
+                    }
+
+                },1000)    
+                    }
+            startSlider();
+            function Stop(){
+                clearInterval(interval);
+            }
+            $("img").on("mouseenter",Stop).on("mouseleave",startSlider);
+            $("button").on("mouseenter",Stop).on("mouseleave",startSlider);
+        $('.next').on("click",function(){
+            var current = $(".imgs");
+            var nxt = current.next();
+            var reset =$("#numone")
+            
+            if(nxt.length){
+                current.removeClass("imgs").css("z-index",-10);
+                nxt.addClass("imgs").css("z-index",10);
+           }
+            if(nxt.length == 0){
+                current.removeClass("imgs").css("z-index",-10);
+                reset.addClass("imgs").css("z-indez",10);
+            }
+        });
+        $(".prev").on('click',function(){
+             var current = $(".imgs");
+            var prev = current.prev();
+            var reset = $("#numend");
+            if(prev.length){
+                current.removeClass("imgs").css("z-index",-10);
+                prev.addClass("imgs").css("z-index",10);
+            }
+            if(prev.length == 0){
+                current.removeClass("imgs").css("z-index",-10);
+                reset.addClass("imgs").css("z-index",10);
+            }
+           });    
+        });
+            
+        </script>
+        
+        
+    </body>
+</html>
